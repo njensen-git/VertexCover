@@ -33,7 +33,7 @@ class Vertex{
       
 }
 public class Graph {
-    private Map<String, List<Vertex>> adjacency;
+    public Map<String, List<Vertex>> adjacency;
     Graph(){
        adjacency = new HashMap<String, List<Vertex>>();
     };
@@ -47,6 +47,9 @@ public class Graph {
         Vertex v = new Vertex(node);
         adjacency.values().stream().forEach(e -> e.remove(v));
         adjacency.remove(node);
+    }
+    int countV(){
+        return adjacency.size();
     }
     void addEdge(String nodeA, String nodeB){
         Vertex vA = new Vertex(nodeA);
